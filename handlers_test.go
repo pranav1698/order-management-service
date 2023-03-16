@@ -2,6 +2,8 @@ package main
 
 import (
 	"github.com/stretchr/testify/assert"
+	"net/http"
+	"net/http/httptest"
 	"testing"
 )
 
@@ -60,4 +62,17 @@ func Test_CheckDuplicateOrderFalse(t *testing.T) {
 
 	check := CheckDuplicateOrder(newOrder)
 	assert.False(t, check)
+}
+
+func Test_GetOrders(t *testing.T) {
+	req, err := http.NewRequest("GET", "/orders", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	rr := httptest.NewRecorder()
+	handler := http.HandlerFunc(GetOrders)
+
+	handler.ServeHTTP(rr, req)
+	assert.Equal(t, rr.Code, http.StatusOK)
 }

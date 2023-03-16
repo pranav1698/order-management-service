@@ -144,6 +144,13 @@ Response:
 
 You can get orders by other filters like status, currency unit and total by changing the above URL.
 
+### Unit Testing
+To run unit-tests, run the following command in the project directory
+
+```
+go test -v *.go
+```
+
 ### Running the application inside docker container
 
 Building docker image for the above application using Dockerfile present in the project,
