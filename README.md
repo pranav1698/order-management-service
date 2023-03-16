@@ -4,7 +4,7 @@ This is a Golang based micro-service to add, update and get orders
 
 To run the application, clone the repo in your local system:
 ```
-https://github.com/pranav1698/order-management-service.git
+git clone https://github.com/pranav1698/order-management-service.git
 ```
 
 To build binary executable, run:
@@ -143,6 +143,13 @@ Response:
 ```
 
 You can get orders by other filters like status, currency unit and total by changing the above URL.
+
+### Unit Testing
+To run unit-tests, run the following command in the project directory
+
+```
+go test -v *.go
+```
 
 ### Running the application inside docker container
 
